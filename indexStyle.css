@@ -14,7 +14,7 @@ header {
   height: 50px; 
 }
 
-pybox {
+.pybox {
   width: 320px;
   height: 50px;
   padding: 10px;
