@@ -15,12 +15,11 @@ header {
 }
 
 .pybox {
-  width: 320px;
-  height: 50px;
-  padding: 10px;
-  border: 5px solid gray;
-  margin: 0;
-  background-color: #57657a;
+      background-color: #57657a;
+      width: 200px;
+      height: 200px;
+    }
+  
 }
 
 main { 
