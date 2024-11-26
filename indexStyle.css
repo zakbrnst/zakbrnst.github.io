@@ -11,8 +11,15 @@ body {
 }
 
 header {
+  height: 50px; 
+}
+
+pybox {
+  width: 320px;
   height: 50px;
-  
+  padding: 10px;
+  border: 5px solid gray;
+  margin: 0;
 }
 
 main { 
