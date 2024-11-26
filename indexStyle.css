@@ -16,10 +16,10 @@ header {
 
 .pybox {
       background-color: #57657a;
-      width: 200px;
-      height: 200px;
-      align: center;
+      width: 2480px;
+      height: 3508px;
       text-align: center;
+      margin: 0 auto;
     }
   
 }
