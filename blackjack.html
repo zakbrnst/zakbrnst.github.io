@@ -20,45 +20,45 @@
         <br></br>
         #Functions<br></br>
         def cardSelect():<br></br>
-            global randomCard<br></br>
-            randomCardPos = randint(0, len(deck) - 1)<br>
-            randomCard = deck[randomCardPos][1]<br>
-            <br>
+        global randomCard<br></br>
+        randomCardPos = randint(0, len(deck) - 1)<br>
+        randomCard = deck[randomCardPos][1]<br>
+        <br>
         def Player():<br>
-            global randomCard<br>
-            global player<br>
-            if randomCard == 11 and player >= 11:<br>
-                randomCard = 1<br>
-            player += randomCard<br>
-            <br>
+        global randomCard<br>
+        global player<br>
+        if randomCard == 11 and player >= 11:<br>
+        randomCard = 1<br>
+        player += randomCard<br>
+        <br>
         def Dealer():<br>
-            global randomCard<br>
-            global dealer<br>
-            if randomCard == 11 and dealer >= 11:<br>
-                randomCard = 1<br>
-            dealer += randomCard<br>
-            <br></br>
-            <br></br>
+        global randomCard<br>
+        global dealer<br>
+        if randomCard == 11 and dealer >= 11:<br>
+        randomCard = 1<br>
+        dealer += randomCard<br>
+        <br></br>
+        <br></br>
         #Cards<br>
         player = 0<br>
         dealer = 0<br>
         Chips = 100<br>
         deck = [["two", 2], ["three", 3], ["four", 4],["five", 5], ["six", 6],<br>
-                ["seven", 7], ["eight", 8], ["nine", 9], ["ten", 10], ["Jack", 10],<br>
-                ["Queen", 10], ["King", 10], ["Ace", 11]]<br>
+        ["seven", 7], ["eight", 8], ["nine", 9], ["ten", 10], ["Jack", 10],<br>
+        ["Queen", 10], ["King", 10], ["Ace", 11]]<br>
         #then 4 of each card from the list above<br>
         <br></br>
         <br></br>
         <br></br>
         #MAIN<br>
         def main():<br>
-            global Chips<br>
-            global ChipsBet<br>
-            global dealer<br>
-            global player<br>
-            global playagain<br>
-            global play<br>
-            print('''Welcome to Blackjack!\n<br>
+        global Chips<br>
+        global ChipsBet<br>
+        global dealer<br>
+        global player<br>
+        global playagain<br>
+        global play<br>
+        print('''Welcome to Blackjack!\n<br>
         You must get as close to 21 as possible.<br>
         If you get over 21, you will go BUST and will LOSE.<br>
         If the dealer gets closer to 21 than you, you will also LOSE.<br>
@@ -69,120 +69,120 @@
         'Stand' will leave you with your current cards, without being able to pick up<br>
         any more.<br>
         You start with 100 chips. Spend them CAREFULLY.\n''')<br>
-            time.sleep(0.2)<br>
-            typeFlag = False<br>
-            while typeFlag == False:<br>
-                if Chips == 0:<br>
-                    print("Sorry, you do not have any chips. Goodbye.")<br>
-                    time.sleep(3)<br>
-                    exit()<br>
-                try:<br>
-                    ChipsBet = int(input(f"You have {Chips} chips. How many do you want to bet? "))<br>
-                except ValueError:<br>
-                    print("That is not valid. Enter a number.")<br>
-                else:<br>
-                    if ChipsBet <= 0:<br>
-                        print("That is not valid. Enter a positive number.")<br>
-                    elif ChipsBet > Chips:<br>
-                        print("That is not valid. You do not have enough chips.")<br>
-                    elif ChipsBet == Chips:<br>
-                        sure = input("This is all of your chips. Are you sure you want to continue? ")<br>
-                        if sure == 'yes' or sure == 'y':<br>
-                            Chips -= ChipsBet<br>
-                            typeFlag = True<br>
-                        else:<br>
-                            print("Choose another value")<br>
-                    else:<br>
-                        Chips -= ChipsBet<br>
-                        typeFlag = True<br>
-                        <br></br>
-                        <br></br>
-            cardSelect()<br>
-            print(f"\nYour first card is {randomCard}")<br>
-            Player()<br>
-            <br></br>
-            time.sleep(1)<br>
-            cardSelect()<br>
-            Dealer()<br>
-            print(f"The dealer got {dealer}")<br>
-            <br></br>
-            hitFlagP = False<br>
-            while hitFlagP == False:<br>
-                time.sleep(1)<br>
-                if player >= 21:<br>
-                    hitFlagP = True<br>
-                    break<br>
-                HitStand = input("Do you want to hit or stand? ")<br>
-                if HitStand == 'hit' or HitStand == 'h':<br>
-                    cardSelect()<br>
-                    print(f"\nYour next card is {randomCard}")<br>
-                    Player()<br>
-                    print(f"You now have a score of {player}\n")<br>
-                elif HitStand == 'stand' or HitStand == 's':<br>
-                    print(f"You have chosen to stand on {player}\n")<br>
-                    hitFlagP = <br>
-                    <br></br>
-                    <br></br>
-            hitFlagD = False<br>
-            while hitFlagD == False:<br>
-                time.sleep(1)<br>
-                if dealer >= 21:<br>
-                    hitFlagD = True<br>
-                elif dealer < 17:<br>
-                    cardSelect()<br>
-                    Dealer()<br>
-                    print(f"The dealer has chosen to hit and has gotten {randomCard}")<br>
-                    print(f"The dealer now has a score of {dealer}")<br>
-                elif dealer >= 17:<br>
-                    print(f"The dealer has chosen to stand, they have ended on {dealer}")<br>
-                    hitFlagD = True<br>
-                    #replace else if fail<br>
-                    <br></br>
-                    <br></br>
-            if dealer > 21 > and player < 21:<br>
-                print(f'''\nYou got {player}. Dealer got {dealer}<br>
-            You WIN''')<br>
-                ChipsBet *= 2<br>
-                Chips += ChipsBet<br>
-            elif player > 21 and dealer < 21:<br>
-                print(f'''\nDealer got {dealer}<br>
-            Dealer WINS''')<br>
-            elif not dealer > 21 and not player > 21:<br>
-                if dealer > player:<br>
-                    print(f'''\nDealer got {dealer}<br>
-                Dealer WINS''')<br>
-                elif player > dealer:<br>
-                    print(f'''\nYou got {player}. Dealer got {dealer}<br>
-            You WIN''')<br>
-                ChipsBet *= 2<br>
-                Chips += ChipsBet<br>
-            elif player == dealer:<br>
-                print(f"Both you and the dealer have ended on {player}, your chips will be returned to you.")<br>
-                Chips += ChipsBet<br>
-            elif player > 21 and dealer > 21:<br>
-                print(f"Both you and the dealer have gone BUST, your chips will be returned to you.")<br>
-                Chips += ChipsBet<br>
-            print(f"You now have {Chips} chips left")<br>
-            <br></br>
-            time.sleep(1)<br>
-            playagain = False<br>
-            while playagain == False:<br>
-                end = input("Do you want to play again? ")<br>
-                if end == 'yes' or end == 'y':<br>
-                    print("Restarting...\n\n")<br>
-                    player = 0<br>
-                    dealer = 0<br>
-                    playagain = True<br>
-                    time.sleep(1.6)<br>
-                elif end == 'no' or end == 'n':<br>
-                    play = False<br>
-                    break<br>
-                else:<br>
-                    playagain = False<br>
+        time.sleep(0.2)<br>
+        typeFlag = False<br>
+        while typeFlag == False:<br>
+        if Chips == 0:<br>
+        print("Sorry, you do not have any chips. Goodbye.")<br>
+        time.sleep(3)<br>
+        exit()<br>
+        try:<br>
+        ChipsBet = int(input(f"You have {Chips} chips. How many do you want to bet? "))<br>
+        except ValueError:<br>
+        print("That is not valid. Enter a number.")<br>
+        else:<br>
+        if ChipsBet <= 0:<br>
+        print("That is not valid. Enter a positive number.")<br>
+        elif ChipsBet > Chips:<br>
+        print("That is not valid. You do not have enough chips.")<br>
+        elif ChipsBet == Chips:<br>
+        sure = input("This is all of your chips. Are you sure you want to continue? ")<br>
+        if sure == 'yes' or sure == 'y':<br>
+        Chips -= ChipsBet<br>
+        typeFlag = True<br>
+        else:<br>
+        print("Choose another value")<br>
+        else:<br>
+        Chips -= ChipsBet<br>
+        typeFlag = True<br>
+        <br></br>
+        <br></br>
+        cardSelect()<br>
+        print(f"\nYour first card is {randomCard}")<br>
+        Player()<br>
+        <br></br>
+        time.sleep(1)<br>
+        cardSelect()<br>
+        Dealer()<br>
+        print(f"The dealer got {dealer}")<br>
+        <br></br>
+        hitFlagP = False<br>
+        while hitFlagP == False:<br>
+        time.sleep(1)<br>
+        if player >= 21:<br>
+        hitFlagP = True<br>
+        break<br>
+        HitStand = input("Do you want to hit or stand? ")<br>
+        if HitStand == 'hit' or HitStand == 'h':<br>
+        cardSelect()<br>
+        print(f"\nYour next card is {randomCard}")<br>
+        Player()<br>
+        print(f"You now have a score of {player}\n")<br>
+        elif HitStand == 'stand' or HitStand == 's':<br>
+        print(f"You have chosen to stand on {player}\n")<br>
+        hitFlagP = <br>
+        <br></br>
+        <br></br>
+        hitFlagD = False<br>
+        while hitFlagD == False:<br>
+        time.sleep(1)<br>
+        if dealer >= 21:<br>
+        hitFlagD = True<br>
+        elif dealer < 17:<br>
+        cardSelect()<br>
+        Dealer()<br>
+        print(f"The dealer has chosen to hit and has gotten {randomCard}")<br>
+        print(f"The dealer now has a score of {dealer}")<br>
+        elif dealer >= 17:<br>
+        print(f"The dealer has chosen to stand, they have ended on {dealer}")<br>
+        hitFlagD = True<br>
+        #replace else if fail<br>
+        <br></br>
+        <br></br>
+        if dealer > 21 > and player < 21:<br>
+        print(f'''\nYou got {player}. Dealer got {dealer}<br>
+        You WIN''')<br>
+        ChipsBet *= 2<br>
+        Chips += ChipsBet<br>
+        elif player > 21 and dealer < 21:<br>
+        print(f'''\nDealer got {dealer}<br>
+        Dealer WINS''')<br>
+        elif not dealer > 21 and not player > 21:<br>
+        if dealer > player:<br>
+        print(f'''\nDealer got {dealer}<br>
+        Dealer WINS''')<br>
+        elif player > dealer:<br>
+        print(f'''\nYou got {player}. Dealer got {dealer}<br>
+        You WIN''')<br>
+        ChipsBet *= 2<br>
+        Chips += ChipsBet<br>
+        elif player == dealer:<br>
+        print(f"Both you and the dealer have ended on {player}, your chips will be returned to you.")<br>
+        Chips += ChipsBet<br>
+        elif player > 21 and dealer > 21:<br>
+        print(f"Both you and the dealer have gone BUST, your chips will be returned to you.")<br>
+        Chips += ChipsBet<br>
+        print(f"You now have {Chips} chips left")<br>
+        <br></br>
+        time.sleep(1)<br>
+        playagain = False<br>
+        while playagain == False:<br>
+        end = input("Do you want to play again? ")<br>
+        if end == 'yes' or end == 'y':<br>
+        print("Restarting...\n\n")<br>
+        player = 0<br>
+        dealer = 0<br>
+        playagain = True<br>
+        time.sleep(1.6)<br>
+        elif end == 'no' or end == 'n':<br>
+        play = False<br>
+        break<br>
+        else:<br>
+        playagain = False<br>
         play = True<br>
         while play == True:<br>
-            main()<br>
-          </p>
+        main()<br>
+      </p>
     </div>
   </body>
 </html>
