@@ -15,7 +15,7 @@ header {
 }
 
 .scroll{
-  background-color:rgb(122, 125, 129);
+  background-color:#57657a;
   width:680px;
   height:200px;
   overflow:scroll;
