@@ -28,7 +28,7 @@ header {
   width: 20px;
 }
 .scroll::-webkit-scrollbar-thumb{
-  background: rgb(57, 66, 141); 
+  background: rgb(91, 157, 233); 
   border-radius: 10px;
 }
 
