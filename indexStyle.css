@@ -22,7 +22,8 @@ header {
       margin: 0 auto;
       margin-top: 70px;
     }
-  
+i {
+    margin-left:10px;
 }
 
 main { 
