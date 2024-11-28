@@ -15,22 +15,21 @@ header {
 }
 
 .scroll{
-  background-color:green;
-  width:100px;
+  background-color:rgb(122, 125, 129);
+  width:680px;
   height:200px;
   overflow:scroll;
 }
 .scroll::-webkit-scrollbar-track{
-  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-  background-color: #F5F5F5;
+  box-shadow: inset 0 0 5px grey; 
+  border-radius: 10px;
 }
 .scroll::-webkit-scrollbar{
-  width: 10px;
-  background-color: #F5F5F5;
+  width: 20px;
 }
 .scroll::-webkit-scrollbar-thumb{
-  background-color: #000000;
-  border: 2px solid #555555;
+  background: red; 
+  border-radius: 10px;
 }
 
 .pybox {
@@ -41,6 +40,7 @@ header {
       margin: 0 auto;
       margin-top: 70px;
     }
+
 i {
     margin-left:20px;
 }
