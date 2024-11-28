@@ -10,6 +10,177 @@
       <img src="logo-png.png" alt="logo" style="width:300px;height:100px;">
     </a>
      <h1 style="text-align:center; font-family:verdana; position:absolute; padding-left: 750px;">Zak Bernstein's Portfolio</h1>
-    <div class="pybox"><h2>Text-based Blackjack</h2></div>
+    <div class="pybox">
+      <h2>Text-based Blackjack</h2>
+      <p>#Imports
+        from random import randint
+        import time
+        
+        
+        #Functions
+        def cardSelect():
+            global randomCard
+            randomCardPos = randint(0, len(deck) - 1)
+            randomCard = deck[randomCardPos][1]
+        
+        def Player():
+            global randomCard
+            global player
+            if randomCard == 11 and player >= 11:
+                randomCard = 1
+            player += randomCard
+        
+        def Dealer():
+            global randomCard
+            global dealer
+            if randomCard == 11 and dealer >= 11:
+                randomCard = 1
+            dealer += randomCard
+           
+        
+        #Cards
+        player = 0
+        dealer = 0
+        Chips = 100
+        deck = [["two", 2], ["three", 3], ["four", 4],["five", 5], ["six", 6],
+                ["seven", 7], ["eight", 8], ["nine", 9], ["ten", 10], ["Jack", 10],
+                ["Queen", 10], ["King", 10], ["Ace", 11]]
+        #then 4 of each card from the list above
+        
+        
+        
+        #MAIN
+        def main():
+            global Chips
+            global ChipsBet
+            global dealer
+            global player
+            global playagain
+            global play
+            print('''Welcome to Blackjack!\n
+        You must get as close to 21 as possible.
+        If you get over 21, you will go BUST and will LOSE.
+        If the dealer gets closer to 21 than you, you will also LOSE.
+        If you get closer than the dealer, your chips will double.
+        You can only see the dealer's first card.
+        The dealer will always stand on 17.
+        'Hit' will give you another card.
+        'Stand' will leave you with your current cards, without being able to pick up
+        any more.
+        You start with 100 chips. Spend them CAREFULLY.\n''')
+            time.sleep(0.2)
+            typeFlag = False
+            while typeFlag == False:
+                if Chips == 0:
+                    print("Sorry, you do not have any chips. Goodbye.")
+                    time.sleep(3)
+                    exit()
+                try:
+                    ChipsBet = int(input(f"You have {Chips} chips. How many do you want to bet? "))
+                except ValueError:
+                    print("That is not valid. Enter a number.")
+                else:
+                    if ChipsBet <= 0:
+                        print("That is not valid. Enter a positive number.")
+                    elif ChipsBet > Chips:
+                        print("That is not valid. You do not have enough chips.")
+                    elif ChipsBet == Chips:
+                        sure = input("This is all of your chips. Are you sure you want to continue? ")
+                        if sure == 'yes' or sure == 'y':
+                            Chips -= ChipsBet
+                            typeFlag = True
+                        else:
+                            print("Choose another value")
+                    else:
+                        Chips -= ChipsBet
+                        typeFlag = True
+        
+        
+            cardSelect()
+            print(f"\nYour first card is {randomCard}")
+            Player()
+        
+            time.sleep(1)
+            cardSelect()
+            Dealer()
+            print(f"The dealer got {dealer}")
+        
+            hitFlagP = False
+            while hitFlagP == False:
+                time.sleep(1)
+                if player >= 21:
+                    hitFlagP = True
+                    break
+                HitStand = input("Do you want to hit or stand? ")
+                if HitStand == 'hit' or HitStand == 'h':
+                    cardSelect()
+                    print(f"\nYour next card is {randomCard}")
+                    Player()
+                    print(f"You now have a score of {player}\n")
+                elif HitStand == 'stand' or HitStand == 's':
+                    print(f"You have chosen to stand on {player}\n")
+                    hitFlagP = True
+               
+                   
+            hitFlagD = False
+            while hitFlagD == False:
+                time.sleep(1)
+                if dealer >= 21:
+                    hitFlagD = True
+                elif dealer < 17:
+                    cardSelect()
+                    Dealer()
+                    print(f"The dealer has chosen to hit and has gotten {randomCard}")
+                    print(f"The dealer now has a score of {dealer}")
+                elif dealer >= 17:
+                    print(f"The dealer has chosen to stand, they have ended on {dealer}")
+                    hitFlagD = True
+                    #replace else if fail
+               
+        
+            if dealer > 21 and player < 21:
+                print(f'''\nYou got {player}. Dealer got {dealer}
+            You WIN''')
+                ChipsBet *= 2
+                Chips += ChipsBet
+            elif player > 21 and dealer < 21:
+                print(f'''\nDealer got {dealer}
+            Dealer WINS''')
+            elif not dealer > 21 and not player > 21:
+                if dealer > player:
+                    print(f'''\nDealer got {dealer}
+                Dealer WINS''')
+                elif player > dealer:
+                    print(f'''\nYou got {player}. Dealer got {dealer}
+            You WIN''')
+                ChipsBet *= 2
+                Chips += ChipsBet
+            elif player == dealer:
+                print(f"Both you and the dealer have ended on {player}, your chips will be returned to you.")
+                Chips += ChipsBet
+            elif player > 21 and dealer > 21:
+                print(f"Both you and the dealer have gone BUST, your chips will be returned to you.")
+                Chips += ChipsBet
+            print(f"You now have {Chips} chips left")
+        
+            time.sleep(1)
+            playagain = False
+            while playagain == False:
+                end = input("Do you want to play again? ")
+                if end == 'yes' or end == 'y':
+                    print("Restarting...\n\n")
+                    player = 0
+                    dealer = 0
+                    playagain = True
+                    time.sleep(1.6)
+                elif end == 'no' or end == 'n':
+                    play = False
+                    break
+                else:
+                    playagain = False
+        play = True
+        while play == True:
+            main()</p>
+    </div>
   </body>
 </html>
