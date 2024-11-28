@@ -12,29 +12,29 @@
      <h1 style="text-align:center; font-family:verdana; position:absolute; padding-left: 750px;">Zak Bernstein's Portfolio</h1>
     <div class="pybox">
       <h2>Text-based Blackjack</h2>
-      <p>#Imports
-        from random import randint
-        import time
-        
-        
-        #Functions
-        def cardSelect():
-            global randomCard
-            randomCardPos = randint(0, len(deck) - 1)
-            randomCard = deck[randomCardPos][1]
-        
-        def Player():
-            global randomCard
-            global player
-            if randomCard == 11 and player >= 11:
-                randomCard = 1
-            player += randomCard
-        
-        def Dealer():
-            global randomCard
-            global dealer
-            if randomCard == 11 and dealer >= 11:
-                randomCard = 1
+      <p>#Imports<li>
+        from random import randint<li></li>
+        import time<li></li>
+        <li></li>
+        <li></li>
+        #Functions<li></li>
+        def cardSelect():<li></li>
+            global randomCard<li></li>
+            randomCardPos = randint(0, len(deck) - 1)<li></li>
+            randomCard = deck[randomCardPos][1]<li></li>
+            <li>
+        def Player():<li></li>
+            global randomCard<li></li>
+            global player<li></li>
+            if randomCard == 11 and player >= 11:<li></li>
+                randomCard = 1<li></li>
+            player += randomCard<li></li>
+            <li>
+        def Dealer():<li></li>
+            global randomCard<li></li>
+            global dealer<li></li>
+            if randomCard == 11 and dealer >= 11:<li></li>
+                randomCard = 1<li></li>
             dealer += randomCard
            
         
