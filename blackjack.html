@@ -21,24 +21,24 @@
         #Functions<br></br>
         def cardSelect():<br></br>
             global randomCard<br></br>
-            randomCardPos = randint(0, len(deck) - 1)<br></br>
-            randomCard = deck[randomCardPos][1]<br></br>
+            randomCardPos = randint(0, len(deck) - 1)<br>
+            randomCard = deck[randomCardPos][1]<br>
             <br>
-        def Player():<br></br>
-            global randomCard<br></br>
-            global player<br></br>
-            if randomCard == 11 and player >= 11:<br></br>
-                randomCard = 1<br></br>
-            player += randomCard<br></br>
+        def Player():<br>
+            global randomCard<br>
+            global player<br>
+            if randomCard == 11 and player >= 11:<br>
+                randomCard = 1<br>
+            player += randomCard<br>
             <br>
-        def Dealer():<br></br>
-            global randomCard<br></br>
-            global dealer<br></br>
-            if randomCard == 11 and dealer >= 11:<br></br>
-                randomCard = 1<br></br>
+        def Dealer():<br>
+            global randomCard<br>
+            global dealer<br>
+            if randomCard == 11 and dealer >= 11:<br>
+                randomCard = 1<br>
             dealer += randomCard<br>
-            <br>
-            <br>
+            <br></br>
+            <br></br>
         #Cards<br>
         player = 0<br>
         dealer = 0<br>
@@ -47,9 +47,9 @@
                 ["seven", 7], ["eight", 8], ["nine", 9], ["ten", 10], ["Jack", 10],<br>
                 ["Queen", 10], ["King", 10], ["Ace", 11]]<br>
         #then 4 of each card from the list above<br>
-        <br>
-        <br>
-        <br>
+        <br></br>
+        <br></br>
+        <br></br>
         #MAIN<br>
         def main():<br>
             global Chips<br>
@@ -95,17 +95,17 @@
                     else:<br>
                         Chips -= ChipsBet<br>
                         typeFlag = True<br>
-                        <br>
-                        <br>
+                        <br></br>
+                        <br></br>
             cardSelect()<br>
             print(f"\nYour first card is {randomCard}")<br>
             Player()<br>
-            <br>
+            <br></br>
             time.sleep(1)<br>
             cardSelect()<br>
             Dealer()<br>
             print(f"The dealer got {dealer}")<br>
-            <br>
+            <br></br>
             hitFlagP = False<br>
             while hitFlagP == False:<br>
                 time.sleep(1)<br>
@@ -121,8 +121,8 @@
                 elif HitStand == 'stand' or HitStand == 's':<br>
                     print(f"You have chosen to stand on {player}\n")<br>
                     hitFlagP = <br>
-                    <br>
-                    <br>
+                    <br></br>
+                    <br></br>
             hitFlagD = False<br>
             while hitFlagD == False:<br>
                 time.sleep(1)<br>
@@ -137,9 +137,9 @@
                     print(f"The dealer has chosen to stand, they have ended on {dealer}")<br>
                     hitFlagD = True<br>
                     #replace else if fail<br>
-                    <br>
-                    <br>
-            if dealer > 21 and player < 21:<br>
+                    <br></br>
+                    <br></br>
+            if dealer > 21 > and player < 21:<br>
                 print(f'''\nYou got {player}. Dealer got {dealer}<br>
             You WIN''')<br>
                 ChipsBet *= 2<br>
@@ -163,7 +163,7 @@
                 print(f"Both you and the dealer have gone BUST, your chips will be returned to you.")<br>
                 Chips += ChipsBet<br>
             print(f"You now have {Chips} chips left")<br>
-            <br>
+            <br></br>
             time.sleep(1)<br>
             playagain = False<br>
             while playagain == False:<br>
