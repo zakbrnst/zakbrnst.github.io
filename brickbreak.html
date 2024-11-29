@@ -39,11 +39,11 @@
           brickHeight = randint(50,150)<br>
           <br>
           def keyInput(i):<br>
-          global paddleX<br>
-          if i.keysym == "Left":<br>
-          paddleX = paddleX - 5<br>
-          if i.keysym == "Right":<br>
-          paddleX = paddleX + 5<br>
+          <i></i>global paddleX<br>
+          <i></i>if i.keysym == "Left":<br>
+          <i></i><i></i>paddleX = paddleX - 5<br>
+          <i></i>if i.keysym == "Right":<br>
+          <i></i><i></i>paddleX = paddleX + 5<br>
           <br>
           myLabel = Label(tk, text = "Hey Gamers")<br>
           myLabel.pack()<br>
@@ -55,28 +55,28 @@
           wind.pack()<br>
           <br></br><br>
           while True:<br>
-          x = x + xv<br>
-          y = y+yv<br>
-          if x < 0 or x > windWidth - addX:<br>
-          xv = xv*-1<br>
-          if y < 0 or y > windHeight - addY:<br>
-          score = score - 1<br>
-          yv = yv*-1<br>
-          if x > paddleX and x < paddleX + paddleWidth and y+addY > paddleY and y+addY < paddleY + 10:<br>
-          yv = yv*-1<br>
-          if x > brickX and x < brickX + brickWidth and y+addY > brickY and y+addY < brickY + brickHeight:<br>
-          yv = yv*-1<br>
-          brickX = randint(100, windWidth - 100)<br>
-          brickY = randint(100, windHeight - 100)<br>
-          brickWidth = randint(50, 150)<br>
-          brickHeight = randint(50, 150)<br>
+          <i></i>x = x + xv<br>
+          <i></i>y = y+yv<br>
+          <i></i>if x < 0 or x > windWidth - addX:<br>
+          <i></i><i></i>xv = xv*-1<br>
+          <i></i>if y < 0 or y > windHeight - addY:<br>
+          <i></i><i></i>score = score - 1<br>
+          <i></i><i></i>yv = yv*-1<br>
+          <i></i>if x > paddleX and x < paddleX + paddleWidth and y+addY > paddleY and y+addY < paddleY + 10:<br>
+          <i></i><i></i>yv = yv*-1<br>
+          <i></i>if x > brickX and x < brickX + brickWidth and y+addY > brickY and y+addY < brickY + brickHeight:<br>
+          <i></i><i></i>yv = yv*-1<br>
+          <i></i><i></i>brickX = randint(100, windWidth - 100)<br>
+          <i></i><i></i>brickY = randint(100, windHeight - 100)<br>
+          <i></i><i></i>brickWidth = randint(50, 150)<br>
+          <i></i><i></i>brickHeight = randint(50, 150)<br>
           <br><br>
-          wind.delete("all")<br>
-          ball = wind.create_oval(x, y, x+addX, y+addY, fill = "white")<br>
-          wind.create_rectangle(paddleX, paddleY, paddleX+paddleWidth, paddleY - 10, fill = "black")<br>
-          wind.create_rectangle(brickX, brickY, brickX + brickWidth, brickY + brickHeight, fill = "red")<br>
-          tk.update()<br>
-          time.sleep(0.01)<br>
+          <i></i>wind.delete("all")<br>
+          <i></i>ball = wind.create_oval(x, y, x+addX, y+addY, fill = "white")<br>
+          <i></i>wind.create_rectangle(paddleX, paddleY, paddleX+paddleWidth, paddleY - 10, fill = "black")<br>
+          <i></i>wind.create_rectangle(brickX, brickY, brickX + brickWidth, brickY + brickHeight, fill = "red")<br>
+          <i></i>tk.update()<br>
+          <i></i>time.sleep(0.01)<br>
           <br><br>
           tk.mainloop()<br>
       </p>
