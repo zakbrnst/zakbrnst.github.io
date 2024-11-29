@@ -15,6 +15,7 @@ header {
 }
 
 .space{
+  margin: auto;
   text-align: center;
 }
 .scroll{
