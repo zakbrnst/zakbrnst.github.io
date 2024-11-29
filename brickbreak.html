@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <link rel="stylesheet" href="indexStyle.css">
-    <title>Brickbreak</title>
+    <title>Text-Based Blackjack</title>
     <link rel="icon" href="logo-png.png">
   </head>
   <body style=" background-color: #45b4f5;">
@@ -10,11 +10,76 @@
       <img src="logo-png.png" alt="logo" style="width:300px;height:100px;">
     </a>
      <h1 style="text-align:center; font-family:verdana; position:absolute; padding-left: 750px;">Zak Bernstein's Portfolio</h1>
-     <div class="pybox">
-       <h2>Brickbreak</h2>
-       <p class="scroll" style = "font-family:'Lucida Grande', Monospace; text-align:left; padding-left:15px; height: 700px; background-color:#7b8fac; color:rgb(0, 0, 0);">
-        
-       </p>
-     </div>
+      <div class="pybox">
+        <h2>Brickbreak</h2>
+        <p class="scroll" style = "font-family:'Lucida Grande', Monospace; text-align:left; padding-left:15px; height: 750px; background-color:#7b8fac; color:rgb(0, 0, 0);">
+          from tkinter import *<br>
+          import time<br>
+          import winsound<br>
+          from random import randint<br>
+          <br>
+          tk = Tk()<br>
+          <br>
+          #variables<br>
+          windHeight = 500<br>
+          windWidth = 600<br>
+          addX = 25<br>
+          addY = 25<br>
+          x = 100<br>
+          y = 100<br>
+          xv = 1<br>
+          yv = 1<br>
+          paddleX = 150<br>
+          paddleY = windHeight - 10<br>
+          paddleWidth = 50<br>
+          score = 0<br>
+          brickX = randint(100, windWidth - 100)<br>
+          brickY = randint(100, windHeight - 100)<br>
+          brickWidth = randint(50, 150)<br>
+          brickHeight = randint(50,150)<br>
+          <br>
+          def keyInput(i):<br>
+          global paddleX<br>
+          if i.keysym == "Left":<br>
+          paddleX = paddleX - 5<br>
+          if i.keysym == "Right":<br>
+          paddleX = paddleX + 5<br>
+          <br>
+          myLabel = Label(tk, text = "Hey Gamers")<br>
+          myLabel.pack()<br>
+          wind = Canvas (tk, bg = "#5394fc", height = windHeight, width = windWidth)<br>
+          wind.pack()<br>
+          <br><br>
+          wind.bind("<KeyPress>", keyInput)<br>
+          wind.focus_set()<br>
+          wind.pack()<br>
+          <br></br><br>
+          while True:<br>
+          x = x + xv<br>
+          y = y+yv<br>
+          if x < 0 or x > windWidth - addX:<br>
+          xv = xv*-1<br>
+          if y < 0 or y > windHeight - addY:<br>
+          score = score - 1<br>
+          yv = yv*-1<br>
+          if x > paddleX and x < paddleX + paddleWidth and y+addY > paddleY and y+addY < paddleY + 10:<br>
+          yv = yv*-1<br>
+          if x > brickX and x < brickX + brickWidth and y+addY > brickY and y+addY < brickY + brickHeight:<br>
+          yv = yv*-1<br>
+          brickX = randint(100, windWidth - 100)<br>
+          brickY = randint(100, windHeight - 100)<br>
+          brickWidth = randint(50, 150)<br>
+          brickHeight = randint(50, 150)<br>
+          <br><br>
+          wind.delete("all")<br>
+          ball = wind.create_oval(x, y, x+addX, y+addY, fill = "white")<br>
+          wind.create_rectangle(paddleX, paddleY, paddleX+paddleWidth, paddleY - 10, fill = "black")<br>
+          wind.create_rectangle(brickX, brickY, brickX + brickWidth, brickY + brickHeight, fill = "red")<br>
+          tk.update()<br>
+          time.sleep(0.01)<br>
+          <br><br>
+          tk.mainloop()<br>
+      </p>
+    </div>
   </body>
 </html>
