@@ -4,6 +4,7 @@ html {
 }
 
 body {
+    display: block;
     min-height:100%;
     background-color: #45b4f5;
     text-align: center;
