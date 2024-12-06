@@ -2,6 +2,7 @@ html {
     height:100%;
     width:100%;
     display: block;
+    text-align: center;
 }
 
 body {
@@ -20,6 +21,7 @@ header {
   display: block;
   margin-left: auto;
   margin-right: auto;
+  text-align: center;
 }
 .scroll{
   background-color:#7b8fac;
