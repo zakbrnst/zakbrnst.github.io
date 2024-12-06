@@ -16,7 +16,9 @@ body {
 header {
   height: 50px; 
 }
-
+video {
+  text-align: center;
+}
 .space{
   display: block;
   margin-left: auto;
