@@ -19,12 +19,7 @@ header {
 video {
   text-align: center;
 }
-.space{
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-}
+
 .scroll{
   background-color:#7b8fac;
   width:880px;
