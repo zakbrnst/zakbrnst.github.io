@@ -76,29 +76,29 @@
         <i1></i1>time.sleep(0.2)<br>
         <i1></i1>typeFlag = False<br>
         <i1></i1>while typeFlag == False:<br>
-        <i></i><i></i>if Chips == 0:<br>
-        <i></i><i></i><i></i>print("Sorry, you do not have any chips. Goodbye.")<br>
-        <i></i><i></i><i></i>time.sleep(3)<br>
-        <i></i><i></i><i></i>exit()<br>
-        <i></i><i></i>try:<br>
-        <i></i><i></i><i></i>ChipsBet = int(input(f"You have {Chips} chips. How many do you want to bet? "))<br>
-        <i></i><i></i>except ValueError:<br>
-        <i></i><i></i><i></i>print("That is not valid. Enter a number.")<br>
-        <i></i><i></i>else:<br>
-        <i></i><i></i><i></i>if ChipsBet <= 0:<br>
-        <i></i><i></i><i></i><i></i>print("That is not valid. Enter a positive number.")<br>
-        <i></i><i></i><i></i>elif ChipsBet > Chips:<br>
-        <i></i><i></i><i></i><i></i>print("That is not valid. You do not have enough chips.")<br>
-        <i></i><i></i><i></i>elif ChipsBet == Chips:<br>
-        <i></i><i></i><i></i><i></i>sure = input("This is all of your chips. Are you sure you want to continue? ")<br>
-        <i></i><i></i><i></i><i></i>if sure == 'yes' or sure == 'y':<br>
-        <i></i><i></i><i></i><i></i><i></i>Chips -= ChipsBet<br>
-        <i></i><i></i><i></i><i></i><i></i>typeFlag = True<br>
-        <i></i><i></i><i></i><i></i>else:<br>
-        <i></i><i></i><i></i><i></i><i></i>print("Choose another value")<br>
-        <i></i><i></i><i></i>else:<br>
-        <i></i><i></i><i></i><i></i>Chips -= ChipsBet<br>
-        <i></i><i></i><i></i><i></i>typeFlag = True<br>
+        <i2></i2>if Chips == 0:<br>
+        <i3></i3>print("Sorry, you do not have any chips. Goodbye.")<br>
+        <i3></i3>time.sleep(3)<br>
+        <i3></i3>exit()<br>
+        <i2></i2><i></i>try:<br>
+        <i3></i3><i></i><i></i>ChipsBet = int(input(f"You have {Chips} chips. How many do you want to bet? "))<br>
+        <i2></i2><i></i>except ValueError:<br>
+        <i3></i3><i></i><i></i>print("That is not valid. Enter a number.")<br>
+        <i2></i2><i></i>else:<br>
+        <i3></i3><i></i><i></i>if ChipsBet <= 0:<br>
+        <i4></i4><i></i><i></i><i></i>print("That is not valid. Enter a positive number.")<br>
+        <i3></i3><i></i><i></i>elif ChipsBet > Chips:<br>
+        <i4></i4><i></i><i></i><i></i>print("That is not valid. You do not have enough chips.")<br>
+        <i3></i3><i></i><i></i>elif ChipsBet == Chips:<br>
+        <i4></i4><i></i><i></i><i></i>sure = input("This is all of your chips. Are you sure you want to continue? ")<br>
+        <i4></i4><i></i><i></i><i></i>if sure == 'yes' or sure == 'y':<br>
+        <i5></i5><i></i><i></i><i></i><i></i>Chips -= ChipsBet<br>
+        <i5></i5><i></i><i></i><i></i><i></i>typeFlag = True<br>
+        <i4></i4><i></i><i></i><i></i>else:<br>
+        <i5></i5><i></i><i></i><i></i><i></i>print("Choose another value")<br>
+        <i3></i3><i></i><i></i>else:<br>
+        <i4></i4><i></i><i></i><i></i>Chips -= ChipsBet<br>
+        <i4></i4><i></i><i></i><i></i>typeFlag = True<br>
         <br>
         <i></i>cardSelect()<br>
         <i></i>print(f"\nYour first card is {randomCard}")<br>
