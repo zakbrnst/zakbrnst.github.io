@@ -1,8 +1,8 @@
 import { useState } from 'react'
-import './App.css'
+import './Project.css'
 import Header from './header'
 
-function App() {
+function ProjectRun() {
   const [count, setCount] = useState(0)
 
   return (
@@ -14,9 +14,7 @@ function App() {
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
         </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
+        <h1>Projects Page</h1>
       </div>
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
@@ -25,4 +23,4 @@ function App() {
   )
 }
 
-export default App
+export default ProjectRun

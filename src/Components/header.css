@@ -1,0 +1,62 @@
+.card-nav-container {/* space from top and sides */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 20px auto 0 auto;   /* 20px from top, centered horizontally */
+  border-radius: 16px;       /* curved edges */
+  background: white;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  width: 90%;         /* shrink to fit content, or use max-width for responsive */        /* optional: prevent it from being too small */
+}
+
+.card-nav-left {
+  align-items: center;
+  justify-content: left;
+  display: flex;
+  flex: 1;
+  padding: 10px 20px;
+  border-radius: 16px;       /* match container */
+  background: inherit;
+}
+
+.card-nav-center {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex: 1;
+  padding: 10px 20px;
+  gap: 16px;
+  border-radius: 16px;       /* match container */
+  background: inherit;
+}
+
+.card-nav-right {
+  align-items: center;
+  justify-content: right;
+  display: flex;
+  flex: 1;
+  padding: 10px 20px;
+  border-radius: 16px;       /* match container */
+  background: inherit;
+}
+
+.card-nav-cta-button {
+  background: #111;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.5rem 1.25rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.navText {
+  font-size: 1rem;
+  color: #333;
+}
+
+.card-nav-logo {
+  height: 70px;  /* adjust as needed */
+  width: auto;
+  vertical-align: middle;
+}
